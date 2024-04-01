@@ -1,0 +1,68 @@
+{
+  "name": "debugassistant",
+  "displayName": "DebugAssistant",
+  "description": "",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.87.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "jimmy-debugger.helloWorld",
+        "title": "Hello World"
+      },
+      {
+        "command": "extension.insertPrintStatement",
+        "title": "Insert Print Statement"
+      },
+      {
+        "command": "extension.resetPrintCounter",
+        "title": "Reset Print Counter"
+      },
+      {
+        "command": "extension.deleteAllPrintStatements",
+        "title": "Delete All Print Statement"
+      }
+    ],
+    "keybindings": [
+      {
+          "command": "extension.insertPrintStatement",
+          "key": "ctrl+d",
+          "mac": "cmd+d",
+          "when": "editorTextFocus"
+      },
+      {
+        "key": "ctrl+r",
+        "mac": "cmd+r",
+        "command": "extension.resetPrintCounter",
+        "when": "editorTextFocus"
+      },
+      {
+        "key": "ctrl+shift+d",
+        "mac": "cmd+shift+d",
+        "command": "extension.deleteAllPrintStatements",
+        "when": "editorTextFocus"
+      }
+  ]
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "pretest": "npm run lint",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.87.0",
+    "@types/mocha": "^10.0.6",
+    "@types/node": "18.x",
+    "eslint": "^8.57.0",
+    "typescript": "^5.3.3",
+    "@vscode/test-cli": "^0.0.8",
+    "@vscode/test-electron": "^2.3.9"
+  }
+}
